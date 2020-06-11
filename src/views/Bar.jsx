@@ -1,17 +1,15 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import {Helmet} from "react-helmet";
 
-class Bar extends React.Component {
-  render() {
+function Bar() {
     return (
-      <div>
-        <Helmet>
-          <title>Bar</title>
-        </Helmet>
-        <div>Bar</div>
-      </div>
+        <div>
+            <Helmet>
+                <title>Bar</title>
+            </Helmet>
+            <div>Bar</div>
+        </div>
     );
-  }
 }
 
 export default Bar;

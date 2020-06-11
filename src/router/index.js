@@ -25,7 +25,7 @@ const router = [
   },
   {
     path: "/top-list",
-    component: loadable(() => import("../containers/TopList")),
+    component: loadable(() => import("../views/TopList")),
     exact: true,
     asyncData(store) {
       return store.dispatch(fatchTopList());
@@ -33,7 +33,7 @@ const router = [
   },
   {
     path: "/top-list/:id",
-    component: loadable(() => import("../containers/TopDetail")),
+    component: loadable(() => import("../views/TopDetail")),
     asyncData(store, params) {
       return store.dispatch(fetchTopDetail(params.id));
     }

@@ -34,7 +34,7 @@ class ServerRenderer {
           entrypoints: ["app"]  // 入口entry
         });
         let root = ReactDOMServer.renderToString(
-          React.createElement(
+          React.createElement( // 这里只是新建的临时的虚拟dom，入参出参和client使用的组件无关。
             ChunkExtractorManager,
             { extractor },
             component)

@@ -1,8 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-class Foo extends React.Component {
-  render() {
+function Foo() {
     return (
       <div>
         <Helmet>
@@ -11,7 +10,6 @@ class Foo extends React.Component {
         <div>Foo</div>
       </div>
     );
-  }
 }
 
 export default Foo;

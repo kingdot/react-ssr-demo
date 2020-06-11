@@ -1,30 +1,37 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { setClientLoad, fetchTopDetail } from "../redux/actions";
+import React, {useEffect} from "react";
+import {Helmet} from "react-helmet";
+import {fetchTopDetail, setClientLoad} from "../redux/actions";
+import {useDispatch, useSelector} from "react-redux";
 
-class TopDetail extends React.Component {
-  componentDidMount() {
-    const id = this.props.match.params.id;
-    if (this.props.clientShouldLoad === true) {
-      this.props.dispatch(fetchTopDetail(id));
-    } else {
-      this.props.dispatch(setClientLoad(true));
-    }
-  }
-  render() {
-    const { topDetail } = this.props;
+function TopDetail({match}) {
+    const {clientShouldLoad, topDetail} = useSelector((state) => ({
+        clientShouldLoad: state.clientShouldLoad,
+        topDetail: state.topDetail
+    }));
+    const dispatch = useDispatch();
+    const {id} = match.params;
+
+    useEffect(() => {
+        // 判断是否需要加载数据
+        if (clientShouldLoad === true) {
+            dispatch(fetchTopDetail(id));
+        } else {
+            // 客户端执行后，将客户端是否加载数据设置为true
+            dispatch(setClientLoad(true));
+        }
+    }, [])
+
     return (
-      <div>
-        <Helmet>
-          <title>{topDetail.name}</title>
-        </Helmet>
         <div>
-          <img src={topDetail.pic} width="120" height="120" style={{float: "left", "marginRight": "20px"}}/>
-          <span dangerouslySetInnerHTML={{__html: topDetail.info}}></span>
+            <Helmet>
+                <title>{topDetail.name}</title>
+            </Helmet>
+            <div>
+                <img src={topDetail.pic} width="120" height="120" style={{float: "left", "marginRight": "20px"}}/>
+                <span dangerouslySetInnerHTML={{__html: topDetail.info}}></span>
+            </div>
         </div>
-      </div>
     );
-  }
 }
 
 export default TopDetail;
