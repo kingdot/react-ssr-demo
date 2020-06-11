@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { setClientLoad, fatchTopList } from "../redux/actions";
 import ListItem from "../components/ListItem";
 import "../assets/top-list.styl";
+import "../assets/test.scss";
 
 class TopList extends React.Component {
   componentDidMount() {
