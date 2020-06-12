@@ -32,3 +32,9 @@
 ### `npm run start`
 
 运行打包后资源
+
+## 原始项目信息：
+
+地址：[https://github.com/code-mcx/react-ssr/tree/webpack4.x](https://github.com/code-mcx/react-ssr/tree/webpack4.x)
+
+不支持koa，不支持sass，不支持react-redux的hook
