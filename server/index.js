@@ -22,7 +22,7 @@ if (isProd) {
     let stats = require("../dist/loadable-stats.json");
     renderer = new ServerRenderer(bundle, template, stats);
 } else { // 等待打包完成
-    readyPromise = require("./dev-server")(app, (
+    readyPromise = require("./dev-server")(app, ( // 每次代码变更都生成新的 rendered 对象，读取最新的bundle
         bundle,
         stats) => {
         renderer = new ServerRenderer(bundle, template, stats);

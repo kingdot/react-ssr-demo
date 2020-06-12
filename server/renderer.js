@@ -7,7 +7,7 @@ const { ChunkExtractor, ChunkExtractorManager } = require("@loadable/server");
 class ServerRenderer {
   constructor(bundle, template, stats) {
     this.template = template;
-    this.stats = stats;
+    this.stats = stats; // client数据
     this.serverEntry = this._createEntry(bundle);
   }
   renderToString(request, staticContext) {
@@ -78,8 +78,8 @@ class ServerRenderer {
       });
     });
   }
-  _createEntry(bundle) {
-    const file = bundle.files[bundle.entry];
+  _createEntry(bundle) { // 执行bundle.json里面的entry代码，拿到其导出对象
+    const file = bundle.files[bundle.entry]; // 拿到server的打包文件
 
     // 读取内容并编译模块
     const vm = require("vm");

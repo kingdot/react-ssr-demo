@@ -40,7 +40,7 @@ module.exports = class SSRServerPlugin {
         } else if (asset.name.match(/\.js\.map$/)) {
           bundle.maps[asset.name.replace(/\.map$/, "")] = JSON.parse(compilation.assets[asset.name].source());
         }
-        // do not emit anything else for server
+        // do not emit anything else for server，不导出打包的js文件，而是导出一个bundle.json
         delete compilation.assets[asset.name];
       })
 

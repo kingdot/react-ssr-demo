@@ -1,29 +1,34 @@
-## React SSR
+## 说明
 
-This is a react ssr demo. It base on react16.x and webpack4.x
+这是一个react的ssr项目，基于以下 ：
 
-Fetures:
+- react16.8+ (support hooks)
+- koa2
+- webpack4.x
+- react-redux7.2+ (support hooks)
 
-1. Support HMR in development mode.
-2. Code Splitting base on route.
-3. Head management for SEO.
-4. Fetch Data ahead of time.
+特性:
 
-## Available Scripts
+- 开发模式支持热更新
+- 基于路由的代码分割
+- 自定义Head以支持SEO
+- 数据预加载（js/css）
+
+## 使用方法
 
 ### `npm install`
 
-First, run the `npm install` to install dependence.
+安装依赖
 
 ### `npm run dev`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+开发模式运行<br>
+地址： [http://localhost:3000](http://localhost:3000)
 
 ### `npm run build`
 
-Builds the app for production.
+生产模式打包
 
 ### `npm run start`
 
-Starts the server for production.
+运行打包后资源
