@@ -1,0 +1,16 @@
+{
+  "$schema": "http://ngw.pages.oa.com/ngwrc.schema.json",
+  "functionRoot": "src/functions",
+  "dist": "./function-dist",
+  "scope": "ivweb-node",
+  "testScope": "ivweb-node-test",
+  "functions": [
+    {
+      "name": "ngw-cli-testfn-update",
+      "handler": "index-server.main",
+      "config": {
+        "KeepAlive": true
+      }
+    }
+  ]
+}

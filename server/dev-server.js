@@ -8,7 +8,7 @@ module.exports = function setupDevServer(app, callback) {
   let bundle;
   let loadableStats;
   let resolve;
-  const readyPromise = new Promise(r => { resolve = r });
+  const readyPromise = new Promise(r => { resolve = r }); // 返回的一个promise
   const update = () => {
     if (bundle && loadableStats) {
       callback(bundle, loadableStats);
@@ -28,7 +28,7 @@ module.exports = function setupDevServer(app, callback) {
   // 客户端打包
   const clientCompiler = webpack(clientConfig);
 
-  const devMiddleware = require("webpack-dev-middleware")(clientCompiler, {
+  const devMiddleware = require('koa-webpack-dev-middleware')(clientCompiler, {
     publicPath: clientConfig.output.publicPath,
     logLevel: "warn"
   });
@@ -51,7 +51,7 @@ module.exports = function setupDevServer(app, callback) {
   });
 
   // 热更新中间件
-  app.use(require("webpack-hot-middleware")(clientCompiler));
+  app.use(require("koa-webpack-hot-middleware")(clientCompiler));
 
   // 监视服务端打包入口文件，有更改就更新
   const serverCompiler = webpack(serverConfig);
