@@ -5,6 +5,7 @@
 - react16.8+ (support hooks)
 - koa2
 - webpack4.x
+- redux
 - react-redux7.2+ (support hooks)
 
 特性:
