@@ -9,10 +9,10 @@ const util = require("./util");
 
 const webpackConfig = merge(baseWebpackConfig, {
   entry: {
-    app: "./src/entry-server.js"
+    app: "./server/index-ngw.js"
   },
   output: {
-    filename: "entry-server.js",
+    filename: "entry-server-mgw.js",
     libraryTarget: "commonjs2"  // 打包成commonjs2规范
   },
   target: "node",  // 指定node运行环境
